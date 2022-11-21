@@ -39,15 +39,40 @@ def g():
     batch_data = feature_view.get_batch_data()
 
     y_pred = model.predict(batch_data)
+    
+    alive_pic_path = "https://i1.sndcdn.com/artworks-RFzl9NReUV7tHQSl-Ubh4sA-t500x500.jpg"
+    dead_pic_path = "https://www.pngfind.com/pngs/m/679-6796853_dead-face-emoji-transparent-hd-png-download.png"
+    
     # print(y_pred)
     offset = 1
     survived = y_pred[y_pred.size-offset]
+    
+    if int(survived) == 1:
+        img_path = alive_pic_path
+    else:
+        img_path = dead_pic_path
+    
     print("Survabiliuty predicted: " + str(survived))
+    img = Image.open(requests.get(img_path, stream=True).raw)
+    img.save("./latest_passenger.png")
+    dataset_api = project.get_dataset_api()
+    dataset_api.upload("./latest_passenger.png", "Resources/images", overwrite=True)
 
     iris_fg = fs.get_feature_group(name="titanic_surv_modal", version=1)
     df = iris_fg.read()
     # print(df)
     label = df.iloc[-offset]["survived"]
+    
+    
+    if int(label) == 1:
+        real_img_path = alive_pic_path
+    else:
+        real_img_path = dead_pic_path
+    
+    print("Survabiliuty actual: " + label)
+    img = Image.open(requests.get(real_img_path, stream=True).raw)
+    img.save("./actual_passenger.png")
+    dataset_api.upload("./actual_passenger.png", "Resources/images", overwrite=True)
 
     monitor_fg = fs.get_or_create_feature_group(name="titanic_predictions",
                                                 version=1,
