@@ -8,10 +8,10 @@ project = hopsworks.login()
 fs = project.get_feature_store()
 
 titanic_df = pd.read_csv(
-    "https://repo.hops.works/master/hopsworks-tutorials/data/iris.csv")
+    "https://raw.githubusercontent.com/erno98/ID2223/main/serverless-ml-intro/titanic/titanic_processed.csv")
 
 titanic_fg = fs.get_or_create_feature_group(
-    name="Titanic_modal",
+    name="titanic_modal",
     version=1,
     primary_key=["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"],
     description="Titanic dataset")
