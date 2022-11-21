@@ -1,1 +1,8 @@
 credentials
+.DS_Store
+.hw_api_key
+iris_model.pkl
+actual_iris.png
+confusion_matrix.png
+latest_iris.png
+df_recent.png
