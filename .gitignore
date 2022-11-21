@@ -6,3 +6,4 @@ actual_iris.png
 confusion_matrix.png
 latest_iris.png
 df_recent.png
+titanic_model.pkl
