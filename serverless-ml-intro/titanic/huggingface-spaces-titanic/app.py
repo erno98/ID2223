@@ -11,37 +11,41 @@ fs = project.get_feature_store()
 
 
 mr = project.get_model_registry()
-model = mr.get_model("iris_modal", version=1)
+model = mr.get_model("titanic_surv_modal", version=1)
 model_dir = model.download()
-model = joblib.load(model_dir + "/iris_model.pkl")
+model = joblib.load(model_dir + "/titanic_model.pkl")
 
 
-def iris(sepal_length, sepal_width, petal_length, petal_width):
+def titanic(age, embarked, fare, parch, pclass, sex, sibsp):
     input_list = []
-    input_list.append(sepal_length)
-    input_list.append(sepal_width)
-    input_list.append(petal_length)
-    input_list.append(petal_width)
+    input_list.append(age)
+    input_list.append(embarked)
+    input_list.append(fare)
+    input_list.append(parch)
+    input_list.append(pclass)
+    input_list.append(sex)
+    input_list.append(sibsp)
+
     # 'res' is a list of predictions returned as the label.
-    res = model.predict(np.asarray(input_list).reshape(1, -1)) 
-    # We add '[0]' to the result of the transformed 'res', because 'res' is a list, and we only want 
-    # the first element.
-    flower_url = "https://raw.githubusercontent.com/featurestoreorg/serverless-ml-course/main/src/01-module/assets/" + res[0] + ".png"
-    img = Image.open(requests.get(flower_url, stream=True).raw)            
-    return img
+    res = model.predict(np.asarray(input_list).reshape(1, -1))            
+    return res
         
 demo = gr.Interface(
-    fn=iris,
-    title="Iris Flower Predictive Analytics",
-    description="Experiment with sepal/petal lengths/widths to predict which flower it is.",
+    fn=titanic,
+    title="Titanic Survival Predictive Analytics",
+    description="Experiment with passanger data to predict whether they would survive in titanic.",
     allow_flagging="never",
     inputs=[
-        gr.inputs.Number(default=1.0, label="sepal length (cm)"),
-        gr.inputs.Number(default=1.0, label="sepal width (cm)"),
-        gr.inputs.Number(default=1.0, label="petal length (cm)"),
-        gr.inputs.Number(default=1.0, label="petal width (cm)"),
+        gr.inputs.Number(default=1.0, label="Age (years)"),
+        gr.inputs.Number(default=1.0, label="Embarked (0 (S), 1 (C), or 2 (Q))"),
+        gr.inputs.Number(default=1.0, label="Fare (USD)"),
+        gr.inputs.Number(default=1.0, label="Parch (from 0 to 6, integer values)"),
+        gr.inputs.Number(default=1.0, label="Class (0, 1, or 2)"),
+        gr.inputs.Number(default=1.0, label="Sex (0-male, 1-female)"),
+        gr.inputs.Number(default=1.0, label="sibsp (from 0 to 5, integer values)")
         ],
-    outputs=gr.Image(type="pil"))
+    outputs=gr.Text(value="none")
+    )
 
 demo.launch()
 
