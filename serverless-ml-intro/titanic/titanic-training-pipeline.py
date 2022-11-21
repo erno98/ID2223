@@ -33,14 +33,14 @@ def g():
     # The feature view is the input set of features for your model. The features can come from different feature groups.    
     # You can select features from different feature groups and join them together to create a feature view
     try: 
-        feature_view = fs.get_feature_view(name="iris_modal", version=1)
+        feature_view = fs.get_feature_view(name="titanic_modal", version=1)
     except:
-        iris_fg = fs.get_feature_group(name="iris_modal", version=1)
+        iris_fg = fs.get_feature_group(name="titanic_modal", version=1)
         query = iris_fg.select_all()
-        feature_view = fs.create_feature_view(name="iris_modal",
+        feature_view = fs.create_feature_view(name="titanic_modal",
                                           version=1,
-                                          description="Read from Iris flower dataset",
-                                          labels=["variety"],
+                                          description="Read from Titanic survival dataset",
+                                          labels=["Survived"],
                                           query=query)    
 
     # You can read training data, randomly split into train/test sets of features (X) and labels (y)        
@@ -58,8 +58,8 @@ def g():
     results = confusion_matrix(y_test, y_pred)
 
     # Create the confusion matrix as a figure, we will later store it as a PNG image file
-    df_cm = pd.DataFrame(results, ['True Setosa', 'True Versicolor', 'True Virginica'],
-                         ['Pred Setosa', 'Pred Versicolor', 'Pred Virginica'])
+    df_cm = pd.DataFrame(results, ['True Survived'],
+                         ['Pred Survived'])
     cm = sns.heatmap(df_cm, annot=True)
     fig = cm.get_figure()
 
@@ -67,12 +67,12 @@ def g():
     mr = project.get_model_registry()
     
     # The contents of the 'iris_model' directory will be saved to the model registry. Create the dir, first.
-    model_dir="iris_model"
+    model_dir="titanic_model"
     if os.path.isdir(model_dir) == False:
         os.mkdir(model_dir)
 
     # Save both our model and the confusion matrix to 'model_dir', whose contents will be uploaded to the model registry
-    joblib.dump(model, model_dir + "/iris_model.pkl")
+    joblib.dump(model, model_dir + "/titanic_model.pkl")
     fig.savefig(model_dir + "/confusion_matrix.png")    
 
 
@@ -83,10 +83,10 @@ def g():
 
     # Create an entry in the model registry that includes the model's name, desc, metrics
     iris_model = mr.python.create_model(
-        name="iris_modal", 
+        name="titanic_modal", 
         metrics={"accuracy" : metrics['accuracy']},
         model_schema=model_schema,
-        description="Iris Flower Predictor"
+        description="Titanic Survived Predictor"
     )
     
     # Upload the model to the model registry, including all files in 'model_dir'
