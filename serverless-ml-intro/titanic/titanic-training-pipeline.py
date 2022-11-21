@@ -16,6 +16,7 @@ def g():
     import hopsworks
     import pandas as pd
     from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
     from sklearn.metrics import confusion_matrix
     from sklearn.metrics import classification_report
@@ -47,7 +48,7 @@ def g():
     X_train, X_test, y_train, y_test = feature_view.train_test_split(0.2)
 
     # Train our model with the Scikit-learn K-nearest-neighbors algorithm using our features (X_train) and labels (y_train)
-    model = KNeighborsClassifier(n_neighbors=2)
+    model = RandomForestClassifier()
     model.fit(X_train, y_train.values.ravel())
 
     # Evaluate model performance using the features from the test set (X_test)
