@@ -13,7 +13,7 @@ titanic_df = pd.read_csv(
 titanic_fg = fs.get_or_create_feature_group(
     name="titanic_surv_modal",
     version=1,
-    primary_key=["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"],
+    primary_key=["pclass", "sex", "age", "sibSp", "parch", "fare", "embarked"],
     description="Titanic dataset")
 titanic_fg.insert(titanic_df, write_options={"wait_for_job": False})
 
