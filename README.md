@@ -42,5 +42,15 @@ Apart from the aforementioned, there are pictures, files, and datasets generated
 The huggingface apps are available under following links:
 - Iris predictions: https://huggingface.co/spaces/Danker/ID2223_iris
 - Iris monitoring (daily): https://huggingface.co/spaces/Danker/iris_daily
-- Titanic predictions: https://huggingface.co/spaces/Danker/ID2223_Titanic
-- Titanic monitoring (daily): https://huggingface.co/spaces/Danker/titanic_daily
+- **Titanic** predictions: https://huggingface.co/spaces/Danker/ID2223_Titanic
+- **Titanic** monitoring (daily): https://huggingface.co/spaces/Danker/titanic_daily
+
+## Titanic data processing
+The raw titanic data was processed to fit out prediction model (in our case, **Random Forest Classifier** (RFC) from sklearn). Following changes has been done:
+- attribute Embarked was made numerical (S→0, C→1, Q→2)
+- attribute Sex was made numerical (female→1, male→0)
+- non-predictive attributes were dropped: PassengerId, Name, Ticket, Cabin
+- rows containing empty (NaN) values were dropped from the dataset
+- the whole dataset was cast as containing float values (due to some issues with hopsworks)
+
+The RFC was trained using 0.2 train-test-split fraction, achieving accuracy of 79% on the test set.
