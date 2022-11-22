@@ -96,8 +96,8 @@ def g():
     history_df = pd.concat([history_df, monitor_df])
 
     df_recent = history_df.tail(4)
-    dfi.export(df_recent, './df_recent.png', table_conversion='matplotlib')
-    dataset_api.upload("./df_recent.png", "Resources/images", overwrite=True)
+    dfi.export(df_recent, './df_recent_titanic.png', table_conversion='matplotlib')
+    dataset_api.upload("./df_recent_titanic.png", "Resources/images", overwrite=True)
 
     predictions = history_df[['prediction']]
     labels = history_df[['label']]
@@ -113,8 +113,8 @@ def g():
 
         cm = sns.heatmap(df_cm, annot=True)
         fig = cm.get_figure()
-        fig.savefig("./confusion_matrix.png")
-        dataset_api.upload("./confusion_matrix.png",
+        fig.savefig("./confusion_matrix_titanic.png")
+        dataset_api.upload("./confusion_matrix_titanic.png",
                            "Resources/images", overwrite=True)
     else:
         print("You need 2 different survival predictions to create the confusion matrix.")
