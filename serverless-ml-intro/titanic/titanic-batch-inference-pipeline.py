@@ -41,10 +41,10 @@ def g():
     y_pred = model.predict(batch_data)
 
     alive_pic_path = "https://i1.sndcdn.com/artworks-RFzl9NReUV7tHQSl-Ubh4sA-t500x500.jpg"
-    dead_pic_path = "https://www.pngfind.com/pngs/m/679-6796853_dead-face-emoji-transparent-hd-png-download.png"
+    dead_pic_path = "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/skull-and-crossbones.png"
 
     # print(y_pred)
-    offset = 1
+    offset = 4
     survived = y_pred[y_pred.size-offset]
 
     if int(survived) == 1:
@@ -96,8 +96,10 @@ def g():
     history_df = pd.concat([history_df, monitor_df])
 
     df_recent = history_df.tail(4)
-    dfi.export(df_recent, './df_recent_titanic.png', table_conversion='matplotlib')
-    dataset_api.upload("./df_recent_titanic.png", "Resources/images", overwrite=True)
+    dfi.export(df_recent, './df_recent_titanic.png',
+               table_conversion='matplotlib')
+    dataset_api.upload("./df_recent_titanic.png",
+                       "Resources/images", overwrite=True)
 
     predictions = history_df[['prediction']]
     labels = history_df[['label']]
@@ -105,7 +107,7 @@ def g():
     # Only create the confusion matrix when our iris_predictions feature group has examples of all 3 iris flowers
     print("Number of different survival predictions to date: " +
           str(predictions.value_counts().count()))
-    if predictions.value_counts().count() == 3:
+    if predictions.value_counts().count() == 2:
         results = confusion_matrix(labels, predictions)
 
         df_cm = pd.DataFrame(results, ['True Died', 'True Survived'],
