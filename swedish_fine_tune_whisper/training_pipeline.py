@@ -5,7 +5,7 @@ from transformers import WhisperFeatureExtractor, WhisperTokenizer, WhisperProce
 import evaluate 
 from feature_pipeline import load_common_voice
 
-LOAD_PRETRAINED = "common_voice/whisper-small-weights"
+LOAD_PRETRAINED = "open-ai/whisper-small"
 TRAINING_PARAMS = "cpu"
 LOAD_DATASET_PATH = "common_voice"
 SAVE_WEIGHTS = "common_voice/whisper-small-weights"
