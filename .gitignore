@@ -7,3 +7,5 @@ confusion_matrix.png
 latest_iris.png
 df_recent.png
 titanic_model.pkl
+
+swedish_fine_tune_whisper/huggingface_token.txt
