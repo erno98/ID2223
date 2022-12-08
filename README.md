@@ -2,6 +2,35 @@
 
 This repository contains solutions for the ID2223 Scalable Machine Learning and Deep Learning course at KTH.
 
+# Lab 2
+Contained within the `swedish_fine_tune_whisper` directory with following structure: 
+```
+swedish_fine_tune_whisper
+│   env.yml               ← requirements for the conda environment for pipelines
+│   feature_pipeline.py   ← code for extracting the features from common voice dataset
+│   training_pipeline.py  ← code for training the whisper model with extracted dataset
+│   training_config.json  ← config file for training, used in training_pipeline
+│   utils.py              ← helper functions
+│   huggingface_token.txt ← token for huggingface, here it's of course empty
+```
+For this project, we stored the data on google drive, which we then mounted into a shared collab to perform the training. This made the work flow pretty efficient, and the size of the data was not big enough to cause problems on our drive spaces.
+
+To improve the model performance with **model-centric approach** we can:
+- tune the training parameters:
+  - by increasing ```num_train_epochs``` we make the model learn for longer, which fits it better to the data. However, it's really slow, and we need to watch out not to overtrain. Please note, that setting up the ```max_steps``` will override this variable.
+  - tweaking the ```learning_rate``` - higher learning rate may cause quicker optimization, however if too big, we may overshoot potential maxima.
+  - changing the ```per_device_train_batch_size``` and ```gradient_accumulation_steps``` as they imply how many samples we feed to the model for each step in gradient calculation, so with more data the gradient change will be slower. These two parameters are highly connected.
+  - ```fp16``` greatly improves the speed of traning (available only on GPU)
+- We can use a bigger model of Whisper. We're using the small variation (244M params), which was pretrained only on English. There's also medium and large, to have a more complex models that could become necessary for difficult languages. 
+- Use different model - some Wav2Vec variations have about 6% on the [hugging face benchmark](https://paperswithcode.com/sota/speech-recognition-on-common-voice-swedish)
+
+However, when it comes to **data-centric approach**, we may:
+- Include more data - this however is problematic with languages such as Swedish, as there are not much reliable alternatives to Common Voice. We managed to identify:
+  - [Europarl (European Parliament Proceedings Parallel Corpus)](https://paperswithcode.com/dataset/europarl)
+  - [CoVoST: A Diverse Multilingual Speech-To-Text Translation Corpus](https://paperswithcode.com/dataset/covost)
+  
+  However, we did not have time to incorporate it into our pipeline.
+
 # Lab 1
 Contained within the `serverless-ml-intro` directory with following structure: 
 ```
