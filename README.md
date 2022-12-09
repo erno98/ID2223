@@ -31,6 +31,8 @@ However, when it comes to **data-centric approach**, we may:
   
   However, we did not have time to incorporate it into our pipeline.
 
+The HuggingFace GradIo can be found here: https://huggingface.co/spaces/Danker/Whisper
+
 # Lab 1
 Contained within the `serverless-ml-intro` directory with following structure: 
 ```
