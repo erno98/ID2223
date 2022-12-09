@@ -22,7 +22,7 @@ To improve the model performance with **model-centric approach** we can:
   - changing the ```per_device_train_batch_size``` and ```gradient_accumulation_steps``` as they imply how many samples we feed to the model for each step in gradient calculation, so with more data the gradient change will be slower. These two parameters are highly connected.
   - ```fp16``` greatly improves the speed of traning (available only on GPU)
 - We can use a bigger model of Whisper. We're using the small variation (244M params), which was pretrained only on English. There's also medium and large, to have a more complex models that could become necessary for difficult languages. 
-- Use different model - some Wav2Vec variations have about 6% on the [hugging face benchmark](https://paperswithcode.com/sota/speech-recognition-on-common-voice-swedish)
+- Use different model - some Wav2Vec variations have about 6% WER on the [hugging face benchmark](https://paperswithcode.com/sota/speech-recognition-on-common-voice-swedish)
 
 However, when it comes to **data-centric approach**, we may:
 - Include more data - this however is problematic with languages such as Swedish, as there are not much reliable alternatives to Common Voice. We managed to identify:
