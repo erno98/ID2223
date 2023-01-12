@@ -10,7 +10,7 @@ import time
 from datetime import timedelta, datetime
 from branca.element import Figure
 
-from functions import decode_features, get_model
+from functions.functions import decode_features, get_model
 
 
 def fancy_header(text, font_size=24):

@@ -66,31 +66,28 @@ def get_air_json(city_name, AIR_QUALITY_API_KEY):
     return requests.get(f'https://api.waqi.info/feed/{city_name}/?token={AIR_QUALITY_API_KEY}').json()['data']
 
 
+import numpy as np
 def get_air_quality_data(city_name):
     AIR_QUALITY_API_KEY = os.getenv('AIR_QUALITY_API_KEY')
     json = get_air_json(city_name, AIR_QUALITY_API_KEY)
     iaqi = json['iaqi']
     forecast = json['forecast']['daily']
+    
+    params = ['pm10', 'pm25', 'no2', 'so2', 'co', 'o3']
+    for param in params:
+        if param not in iaqi:
+            iaqi[param] = {"v": np.nan}
+    
     return [
         city_name,
         json['aqi'],                 # AQI
         json['time']['s'][:10],      # Date
-        iaqi['h']['v'],
-        iaqi['p']['v'],
+        iaqi['pm25']['v'],
         iaqi['pm10']['v'],
-        iaqi['t']['v'],
-        forecast['o3'][0]['avg'],
-        forecast['o3'][0]['max'],
-        forecast['o3'][0]['min'],
-        forecast['pm10'][0]['avg'],
-        forecast['pm10'][0]['max'],
-        forecast['pm10'][0]['min'],
-        forecast['pm25'][0]['avg'],
-        forecast['pm25'][0]['max'],
-        forecast['pm25'][0]['min'],
-        forecast['uvi'][0]['avg'],
-        forecast['uvi'][0]['avg'],
-        forecast['uvi'][0]['avg']
+        iaqi['no2']['v'],
+        iaqi['so2']['v'],
+        iaqi['co']['v'],
+        iaqi['o3']['v']
     ]
 
 def get_air_quality_df(data):
@@ -98,22 +95,12 @@ def get_air_quality_df(data):
         'city',
         'aqi',
         'date',
-        'iaqi_h',
-        'iaqi_p',
-        'iaqi_pm10',
-        'iaqi_t',
-        'o3_avg',
-        'o3_max',
-        'o3_min',
-        'pm10_avg',
-        'pm10_max',
-        'pm10_min',
-        'pm25_avg',
-        'pm25_max',
-        'pm25_min',
-        'uvi_avg',
-        'uvi_max',
-        'uvi_min',
+        'no2',
+        'so2',
+        'co'
+        'o3'
+        'pm10'
+        'pm25'
     ]
 
     new_data = pd.DataFrame(
