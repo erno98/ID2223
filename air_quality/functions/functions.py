@@ -4,9 +4,8 @@ import os
 import joblib
 import pandas as pd
 
-from dotenv import load_dotenv
-load_dotenv()
-
+AIR_QUALITY_API_KEY = os.environ['AIR_QUALITY_API_KEY']
+WEATHER_API_KEY = os.environ['WEATHER_API_KEY']
 
 def decode_features(df, feature_view):
     """Decodes features in the input DataFrame using corresponding Hopsworks Feature Store transformation functions"""

@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 from pandas import json_normalize
-from dotenv import load_dotenv
 import os
 import datetime
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -14,8 +13,7 @@ def get_weather_data(save_to_csv=True):
 
     cities = df_meta['city']
 
-    load_dotenv()
-    secret = os.getenv('WEATHER_API_KEY')
+    secret = os.environ['WEATHER_API_KEY']
 
     api = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + \
         str(cities[0]) + \

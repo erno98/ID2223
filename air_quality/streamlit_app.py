@@ -33,7 +33,7 @@ st.sidebar.write(36 * "-")
 
 st.sidebar.header('\n📡 Connecting to Hopsworks Feature Store...')
 
-project = hopsworks.login(project = "ID2223_Ernest")
+project = hopsworks.login(project = "ID2223_Ernest", api_key_value=os.environ['HOPSWORKS_API_KEY'])
 fs = project.get_feature_store()
 feature_view = fs.get_feature_view(
     name = 'poland_air_quality_fv',
