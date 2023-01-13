@@ -3,3 +3,4 @@ nbconvert==6.4.4
 hopsworks
 geopandas
 folium
+joblib
