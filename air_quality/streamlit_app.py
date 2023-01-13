@@ -49,7 +49,7 @@ st.sidebar.header('\n☁️ Collecting the weather forecasts...')
 # GET THE WEATHER DATA ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # check if it was previously downloaded
-weather_fname = f"weather_files/{str(datetime.now())[:10]}.csv"
+weather_fname = f"air_quality/weather_files/{str(datetime.now())[:10]}.csv"
 if os.path.exists(weather_fname):
     weather_data = pd.read_csv(weather_fname)
 # doesn't exist, download
@@ -63,7 +63,7 @@ st.sidebar.write(36 * "-")
 st.sidebar.header(f"🤖Loading the models...")
 
 fig = Figure(width=1000,height=1000)
-df = pd.read_excel("data_poland/meta.xlsx")
+df = pd.read_excel("air_quality/data_poland/meta.xlsx")
 
 geometry = geopandas.points_from_xy(df.lat, df.lon)
 geo_df = geopandas.GeoDataFrame(

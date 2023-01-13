@@ -102,7 +102,7 @@ def get_weather_data(save_to_csv=True):
 
 
     if save_to_csv:
-        df_data.to_csv(f'weather_files/{str(datetime.datetime.now())[:10]}.csv', index=False)
+        df_data.to_csv(f'air_quality/weather_files/{str(datetime.datetime.now())[:10]}.csv', index=False)
 
     return df_data
 
