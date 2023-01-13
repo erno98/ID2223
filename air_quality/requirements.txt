@@ -5,3 +5,4 @@ geopandas
 folium
 joblib
 streamlit-folium
+python-dotenv
