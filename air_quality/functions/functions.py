@@ -42,7 +42,7 @@ def get_model(project, model_name, evaluation_metric, sort_metrics_by):
     """Retrieve desired model or download it from the Hopsworks Model Registry.
 
     In second case, it will be physically downloaded to this directory"""
-    TARGET_FILE = "model.pkl"
+    TARGET_FILE = f"{model_name}.pkl"
     list_of_files = [os.path.join(dirpath,filename) for dirpath, _, filenames \
                      in os.walk('.') for filename in filenames if filename == TARGET_FILE]
 
@@ -57,7 +57,7 @@ def get_model(project, model_name, evaluation_metric, sort_metrics_by):
                                       evaluation_metric,
                                       sort_metrics_by)
             model_dir = model.download()
-            model = joblib.load(model_dir + "/model.pkl")
+            model = joblib.load(model_dir + f"/{model_name}.pkl")
 
     return model
 
