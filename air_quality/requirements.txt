@@ -4,3 +4,4 @@ hopsworks
 geopandas
 folium
 joblib
+streamlit-folium
