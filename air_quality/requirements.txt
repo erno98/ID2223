@@ -9,3 +9,4 @@ joblib
 streamlit-folium
 python-dotenv
 scikit-learn
+openpyxl
