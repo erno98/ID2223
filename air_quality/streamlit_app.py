@@ -149,9 +149,9 @@ for coordinates in geo_df_list:
         
         if pm10_val < 10:
             type_color = "green"
-        elif pm10_val < 20 and pm10_val >= 10:
+        elif pm10_val < 25 and pm10_val >= 10:
             type_color = "blue"
-        elif pm10_val < 30 and pm10_val >= 20:
+        elif pm10_val < 40 and pm10_val >= 25:
             type_color = "orange"
         else:
             type_color = "purple"
@@ -181,15 +181,16 @@ def make_heatdata(predictions):
         for _ in range(int(predictions[predictions.city == c]['Mean'].values[0])):
             heat_data.append([city_cords.xy[1][0], city_cords.xy[0][0]])
     
-    # add 50 points somewhere to standardize the heatmap
-    # for _ in range(50):
+    #add 100 points somewhere to standardize the heatmap
+    # for _ in range(100):
     #     heat_data.append([0.0, 0.0])
         
     return heat_data
 
 heat_data = make_heatdata(preds)
 
-plugins.HeatMap(heat_data, radius=50).add_to(m)
+plugins.HeatMap(heat_data, radius=50, blur=40, max_val=preds['Mean'].max()).add_to(m)
+
 fig.add_child(m)
 
 # call to render Folium map in Streamlit
