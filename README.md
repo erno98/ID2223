@@ -12,6 +12,16 @@ Similarly to the original Air Quality Project this project perdicts air quailty 
 A hosted public UI of the project can be found [Here](https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/ "PM10 Predictions for Poland")
 <br>**Note:** This project is not optimised for all Web Browsers e.g Safari, our testing was done on Google Chrome version: 108.0.5359.124.
 
+https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/
+
+### Prerequisites
+In order to run this project you will need to connect to a Hopswoks account which will provide you with a Hopsworks API Key. You will then export to your Hopsworks API Key as an environment variable in the project. 
+
+You will also be required to install existing Python libraries used in the project such as for example Streamlit.
+
+### Notes
+If desired you can choose to export the collected weather data used for predictions as a CSV file by setting ```save_to_csv``` parameter to true when ```get_weather_data``` is called.
+
 ### Structure
 Contained within the air_quality directory with following structure:
 ```
