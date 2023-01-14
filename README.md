@@ -26,97 +26,40 @@ If desired you can choose to export the collected weather data used for predicti
 Contained within the air_quality directory with following structure:
 ```
 air_quality   
-│   1_backfill_feature_groups.ipynb 
-│   2_queries_and_merging.ipynb
-│   3_training.ipynb
-│   AirParticle_Forest.pkl
-│   Gradient Duster.pkl
-│   GradientBoostingRegressor.pkl
-│   Gradient_Duster.pkl
-│   PM10Lasso.pkl
+│   1_backfill_feature_groups.ipynb                 ← notebook for setting up the features on hopsworks
+│   2_queries_and_merging.ipynb                     ← notebook for merging the data and creating the training dataset
+│   3_training.ipynb                                ← notebook for training our models
+│   AirParticle_Forest.pkl                          ← saved RandomForestRegressor model for PM10 
+│   Gradient Duster.pkl                             ← saved GradientBooster model for PM10 
+│   PM10Lasso.pkl                                   ← saved Lasso model for PM10
 │   README.md
-│   RandomForestRegressor.pkl
 │   requirements.txt                                ← requirements for the whole project 
-│   streamlit_app.py
-│   testing.ipynb
+│   streamlit_app.py                                ← streamlit application source
 │
-└───.ipynb_checkpoints                              ← Checkpoints from the Jupyter notebooks
-│   │   1_backfill_feature_groups-checkpoint.ipynb
-│   │   2_queries_and_merging-checkpoint.ipynb
-│   │   3_training-checkpoint.ipynb
-│   │   testing-checkpoint.ipynb
-│
-└───__pycache__
-│   │   functions.cpython-37.pyc
-│   │   functions.cpython-38.pyc
 │
 └───data_poland                                     ← Air Quality Data, Weather Data, City Meta Data
-│   │   meta.xlsx
+│   │   meta.xlsx                                   ← meta information about the selected cities
 │   │   visualize.ipynb
 │   │   
-│   └───.ipynb_checkpoints 
-│   │   │   Untitled-checkpoint.ipynb
-│   │   │   collect_metadata-checkpoint.ipynb
-│   │   │   visualize-checkpoint.ipynb
-│   │   │   visualize_test-checkpoint.ipynb
-│   │   
-│   └───air_quality
-│   │   │   air_quality_merged.csv
+│   └───air_quality                                 ← historical air quality data
+│   │   │   air_quality_merged.csv                  ← merged air quality data csv
+│   │   │   merge_air_quality.ipynb                 ← notebook used for merging the air quality data
 │   │   │   biala_podlaska.csv
-│   │   │   bialystok.csv
-│   │   │   bielsko_biala.csv
-│   │   │   bydgoszcz.csv
-│   │   │   gdansk.csv
-│   │   │   gorzow.csv
-│   │   │   kalisz.csv
-│   │   │   katowice.csv
-│   │   │   koszalin.csv
-│   │   │   krakow.csv
-│   │   │   lodz.csv
-│   │   │   lomza.csv
-│   │   │   lublin.csv
-│   │   │   merge_air_quality.ipynb
-│   │   │   poznan.csv
-│   │   │   radom.csv
-│   │   │   rzeszow.csv
-│   │   │   suwalki.csv
-│   │   │   szczecin.csv
-│   │   │   szczecinek.csv
+│   │   │   ...
 │   │   │   warszawa.csv
 │   │   │   wroclaw.csv   
-│   │   └───.ipynb_checkpoints
-│   │       │  merge_air_quality-checkpoint.ipynb
 │   │   
-│   └───dummy_data
-│   │   │   pred.xlsx
-│   │   │   true.xlsx
-│   │   
-│   └───weather
+│   └───weather                                    ← historical weather data (daily 2022)
+│       │   weather_merged.csv                     ← merged weather data csv
+│       │   merge_weather.ipynb                    ← notebook used for merging the weather data
 │       │   biala_podlaska.csv
-│       │   bielsko_biala.csv
-│       │   gdansk.csv
-│       │   katowice.csv
-│       │   krakow.csv
-│       │   merge_weather.ipynb
-│       │   poznan.csv
+│       │   ...
 │       │   warszawa.csv
-│       │   weather_merged.csv
 │       │   wroclaw.csv
-│       └───.ipynb_checkpoints
-│           │  merge_weather-checkpoint.ipynb
 │
 └───functions                                     ← Model functions & Get functions for Weather Data
 │   │   functions.py
 │   │   get_weather_data.py
-│   └───__pycache__
-│       │   functions.cpython-37.pyc
-│       │   functions.cpython-38.pyc
-│       │   get_weather_data.cpython-37.pyc
-│
-└───images                                       
-│   │   1.png
-│   │   2.png
-│   │   api_keys_env_file.png
 │
 └───weather_files                                  ← Location of saved CSV files of Prediction Weather Data
 │   │   2023-01-13.csv
