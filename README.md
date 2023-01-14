@@ -3,7 +3,12 @@
 This repository contains solutions for the ID2223 Scalable Machine Learning and Deep Learning course at KTH.
 
 # Project
-This project air_quality
+## Description
+This project is an adaptation from the air quality prediction project found here:
+[hobbit-hole](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hobbit lifestyles")
+
+## Structure
+Contained within the air_quality directory with following structure:
 ```
 air_quality   
 │   1_backfill_feature_groups.ipynb
