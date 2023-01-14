@@ -2,6 +2,97 @@
 
 This repository contains solutions for the ID2223 Scalable Machine Learning and Deep Learning course at KTH.
 
+# Project
+This project air_quality
+
+air_quality   
+│   1_backfill_feature_groups.ipynb
+│   2_queries_and_merging.ipynb
+│   3_training.ipynb
+│   AirParticle_Forest.pkl
+│   Gradient Duster.pkl
+│   GradientBoostingRegressor.pkl
+│   Gradient_Duster.pkl
+│   PM10Lasso.pkl
+│   README.md
+│   RandomForestRegressor.pkl
+│   requirements.txt   ← requirements for the whole project 
+│   streamlit_app.py
+│   testing.ipynb
+│
+└───.ipynb_checkpoints                              ← Checkpoints from the Jupyter notebooks
+│   │   1_backfill_feature_groups-checkpoint.ipynb
+│   │   2_queries_and_merging-checkpoint.ipynb
+│   │   3_training-checkpoint.ipynb
+│   │   testing-checkpoint.ipynb
+│
+└───__pycache__
+│   │   functions.cpython-37.pyc
+│   │   functions.cpython-38.pyc
+│
+└───data_poland
+│   │   meta.xlsx
+│   │   visualize.ipynb
+│   │   
+│   └───.ipynb_checkpoints 
+│   │   Untitled-checkpoint.ipynb
+│   │   collect_metadata-checkpoint.ipynb
+│   │   visualize-checkpoint.ipynb
+│   │   visualize_test-checkpoint.ipynb
+│   │   
+│   └───air_quality
+│   │   │   air_quality_merged.csv
+│   │   │   biala_podlaska.csv
+│   │   │   bialystok.csv
+│   │   │   bielsko_biala.csv
+│   │   │   bydgoszcz.csv
+│   │   │   gdansk.csv
+│   │   │   gorzow.csv
+│   │   │   kalisz.csv
+│   │   │   katowice.csv
+│   │   │   koszalin.csv
+│   │   │   krakow.csv
+│   │   │   lodz.csv
+│   │   │   lomza.csv
+│   │   │   lublin.csv
+│   │   │   merge_air_quality.ipynb
+│   │   │   poznan.csv
+│   │   │   radom.csv
+│   │   │   rzeszow.csv
+│   │   │   suwalki.csv
+│   │   │   szczecin.csv
+│   │   │   szczecinek.csv
+│   │   │   warszawa.csv
+│   │   │   wroclaw.csv   
+│   │   └───.ipynb_checkpoints
+│   │       merge_air_quality-checkpoint.ipynb
+│   │   
+│   └───dummy_data
+│   │   
+│   │   
+│   └───weather
+│   │   
+│
+└───functions
+│
+└───images
+│
+└───weather_files
+
+1_backfill_feature_groups.ipynb
+2_queries_and_merging.ipynb
+3_training.ipynb
+AirParticle_Forest.pkl
+Gradient Duster.pkl
+GradientBoostingRegressor.pkl
+Gradient_Duster.pkl
+PM10Lasso.pkl
+README.md
+RandomForestRegressor.pkl
+requirements.txt
+streamlit_app.py
+testing.ipynb
+
 # Lab 2
 Contained within the `swedish_fine_tune_whisper` directory with following structure: 
 ```
