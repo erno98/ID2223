@@ -8,8 +8,9 @@ This project is an advanced adaptation from the air quality prediction project f
 
 Similarly to the original Air Quality Project this project perdicts air quailty based on various weather metrics. This project however, aims to predict the air quality over the next 7 days (including today) across the country of Poland. The Goal is to be able to visualize how air quality metrics shift country-wide across multiple days in the future.
 
+### Link to public UI
 A hosted public UI of the project can be found [Here](https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/ "PM10 Predictions for Poland")
-**Note:** This project is not optimised for all Web Browsers e.g Safari, our testing was done on Google Chrome version: 108.0.5359.124.
+<br>**Note:** This project is not optimised for all Web Browsers e.g Safari, our testing was done on Google Chrome version: 108.0.5359.124.
 
 ### Structure
 Contained within the air_quality directory with following structure:
