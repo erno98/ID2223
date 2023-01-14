@@ -25,6 +25,18 @@ You will also be required to install existing Python libraries used in the proje
 ### Notes
 If desired you can choose to export the collected weather data used for predictions as a CSV file by setting ```save_to_csv``` parameter to True when ```get_weather_data``` is called.
 
+API optimizations were made to ensure that weather files are saved and used until a renewed API call is actually desired. This means the API for the weather data is only used at max once a day and only on the initial page load.
+
+Models are saved locally after being collected from the Hopsworks model & feature store, meaning they're not downloaded every time the page is reloaded.
+
+We provide multiple models based on various weather API’s. This creates the scalability to add various additional models or furtherr append additional weather data if desired. The current models used are Random Forest Regressor, Gradient Boosting Regressor and Lasso.
+
+Currently, the solution is an Ensemble model of the various aforementioned models. The code is structured such that additional ones can easily be added or removed if they manage to provide better results.
+
+Meta data of cities can be viewed on the interactive map by clicking on the individual cities.
+
+Our solution is not relying on previous predictions, but instead relies on weather forecast data for the current day and the 6 following days.
+
 ### Structure
 Contained within the air_quality directory with following structure:
 ```
