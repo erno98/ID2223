@@ -9,7 +9,7 @@ This repository contains solutions for the ID2223 Scalable Machine Learning and 
 ### Description
 This project is an advanced adaptation from the air quality prediction project found in [Hopsworks Air Quality Tutorial](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hopsworks Air Quality Tutorial")
 
-Similarly to the original Air Quality Project this project perdicts air quailty based on various weather metrics. This project however, aims to predict the air quality over the next 7 days (including today) across the country of Poland. The Goal is to be able to visualize how air quality metrics shift country-wide across multiple days in the future.
+Similarly to the original Air Quality Project this project perdicts air quailty based on various weather metrics. This project however, aims to predict the air quality (by means of the PM10 metric) over the next 7 days (including today) across the country of Poland using solely weather forecast data as well as information about the cities, such as density of the population. The Goal is to be able to visualize how air quality metrics shift country-wide across multiple days in the future.
 
 ### Link to public UI
 A hosted public UI of the project can be found [Here](https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/ "PM10 Predictions for Poland")
@@ -18,9 +18,9 @@ A hosted public UI of the project can be found [Here](https://erno98-id2223-air-
 https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/
 
 ### Prerequisites
-In order to run this project you will need to connect to a Hopswoks account which will provide you with a Hopsworks API Key. You will then export to your Hopsworks API Key as an environment variable in the project. 
+In order to run this project you will need to connect to a Hopswoks account which will provide you with a [Hopsworks](https://www.hopsworks.ai/) API Key. You will then export to your Hopsworks API Key as an environment variable in the project. This also follows for the API key for the weather data from [Visual Crossing](https://www.visualcrossing.com/).
 
-You will also be required to install existing Python libraries used in the project such as for example Streamlit.
+You will also be required to install existing Python libraries used in the project such as for example Streamlit (for details see ```requirements.txt```).
 
 ### Notes
 If desired you can choose to export the collected weather data used for predictions as a CSV file by setting ```save_to_csv``` parameter to True when ```get_weather_data``` is called.
