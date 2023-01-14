@@ -35,10 +35,10 @@ air_quality
 │   │   visualize.ipynb
 │   │   
 │   └───.ipynb_checkpoints 
-│   │   Untitled-checkpoint.ipynb
-│   │   collect_metadata-checkpoint.ipynb
-│   │   visualize-checkpoint.ipynb
-│   │   visualize_test-checkpoint.ipynb
+│   │   │   Untitled-checkpoint.ipynb
+│   │   │   collect_metadata-checkpoint.ipynb
+│   │   │   visualize-checkpoint.ipynb
+│   │   │   visualize_test-checkpoint.ipynb
 │   │   
 │   └───air_quality
 │   │   │   air_quality_merged.csv
@@ -86,24 +86,21 @@ air_quality
 │           │  merge_weather-checkpoint.ipynb
 │
 └───functions
+│   │   functions.py
+│   │   get_weather_data.py
+│   └───__pycache__
+│       │   functions.cpython-37.pyc
+│       │   functions.cpython-38.pyc
+│       │   get_weather_data.cpython-37.pyc
 │
 └───images
+│   │   1.png
+│   │   2.png
+│   │   api_keys_env_file.png
 │
 └───weather_files
+│   │   2023-01-13.csv
 ```
-1_backfill_feature_groups.ipynb
-2_queries_and_merging.ipynb
-3_training.ipynb
-AirParticle_Forest.pkl
-Gradient Duster.pkl
-GradientBoostingRegressor.pkl
-Gradient_Duster.pkl
-PM10Lasso.pkl
-README.md
-RandomForestRegressor.pkl
-requirements.txt
-streamlit_app.py
-testing.ipynb
 
 # Lab 2
 Contained within the `swedish_fine_tune_whisper` directory with following structure: 
