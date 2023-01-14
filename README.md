@@ -20,13 +20,13 @@ In order to run this project you will need to connect to a Hopswoks account whic
 You will also be required to install existing Python libraries used in the project such as for example Streamlit.
 
 ### Notes
-If desired you can choose to export the collected weather data used for predictions as a CSV file by setting ```save_to_csv``` parameter to true when ```get_weather_data``` is called.
+If desired you can choose to export the collected weather data used for predictions as a CSV file by setting ```save_to_csv``` parameter to True when ```get_weather_data``` is called.
 
 ### Structure
 Contained within the air_quality directory with following structure:
 ```
 air_quality   
-│   1_backfill_feature_groups.ipynb
+│   1_backfill_feature_groups.ipynb 
 │   2_queries_and_merging.ipynb
 │   3_training.ipynb
 │   AirParticle_Forest.pkl
@@ -36,7 +36,7 @@ air_quality
 │   PM10Lasso.pkl
 │   README.md
 │   RandomForestRegressor.pkl
-│   requirements.txt   ← requirements for the whole project 
+│   requirements.txt                                ← requirements for the whole project 
 │   streamlit_app.py
 │   testing.ipynb
 │
@@ -50,7 +50,7 @@ air_quality
 │   │   functions.cpython-37.pyc
 │   │   functions.cpython-38.pyc
 │
-└───data_poland
+└───data_poland                                     ← Air Quality Data, Weather Data, City Meta Data
 │   │   meta.xlsx
 │   │   visualize.ipynb
 │   │   
@@ -105,7 +105,7 @@ air_quality
 │       └───.ipynb_checkpoints
 │           │  merge_weather-checkpoint.ipynb
 │
-└───functions
+└───functions                                     ← Model functions & Get functions for Weather Data
 │   │   functions.py
 │   │   get_weather_data.py
 │   └───__pycache__
@@ -113,12 +113,12 @@ air_quality
 │       │   functions.cpython-38.pyc
 │       │   get_weather_data.cpython-37.pyc
 │
-└───images
+└───images                                       
 │   │   1.png
 │   │   2.png
 │   │   api_keys_env_file.png
 │
-└───weather_files
+└───weather_files                                  ← Location of saved CSV files of Prediction Weather Data
 │   │   2023-01-13.csv
 ```
 
