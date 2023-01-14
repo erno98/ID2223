@@ -3,10 +3,15 @@
 This repository contains solutions for the ID2223 Scalable Machine Learning and Deep Learning course at KTH.
 
 # Project
-## Description
-This project is an adaptation from the air quality prediction project found in [Hopsworks Air Quality Tutorial](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hopsworks Air Quality Tutorial")
+### Description
+This project is an advanced adaptation from the air quality prediction project found in [Hopsworks Air Quality Tutorial](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hopsworks Air Quality Tutorial")
 
-## Structure
+Similarly to the original Air Quality Project this project perdicts air quailty based on various weather metrics. This project however, aims to predict the air quality over the next 7 days (including today) across the country of Poland. The Goal is to be able to visualize how air quality metrics shift country-wide across multiple days in the future.
+
+A hosted public UI of the project can be found [Here](https://erno98-id2223-air-qualitystreamlit-app-p8sjf5.streamlit.app/ "PM10 Predictions for Poland")
+**Note:** This project is not optimised for all Web Browsers e.g Safari, our testing was done on Google Chrome version: 108.0.5359.124.
+
+### Structure
 Contained within the air_quality directory with following structure:
 ```
 air_quality   
