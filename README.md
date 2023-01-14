@@ -4,8 +4,7 @@ This repository contains solutions for the ID2223 Scalable Machine Learning and 
 
 # Project
 ## Description
-This project is an adaptation from the air quality prediction project found here:
-[hobbit-hole](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hobbit lifestyles")
+This project is an adaptation from the air quality prediction project found in [Hopsworks Air Quality Tutorial](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hopsworks Air Quality Tutorial")
 
 ## Structure
 Contained within the air_quality directory with following structure:
