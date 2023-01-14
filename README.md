@@ -4,7 +4,7 @@ This repository contains solutions for the ID2223 Scalable Machine Learning and 
 
 # Project
 This project air_quality
-
+```
 air_quality   
 │   1_backfill_feature_groups.ipynb
 │   2_queries_and_merging.ipynb
@@ -78,7 +78,7 @@ air_quality
 └───images
 │
 └───weather_files
-
+```
 1_backfill_feature_groups.ipynb
 2_queries_and_merging.ipynb
 3_training.ipynb
