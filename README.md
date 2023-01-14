@@ -39,7 +39,6 @@ air_quality
 │   requirements.txt                                ← requirements for the whole project 
 │   streamlit_app.py                                ← streamlit application source
 │
-│
 └───data_poland                                     ← Air Quality Data, Weather Data, City Meta Data
 │   │   meta.xlsx                                   ← meta information about the selected cities
 │   │   visualize.ipynb
@@ -60,12 +59,12 @@ air_quality
 │       │   warszawa.csv
 │       │   wroclaw.csv
 │
-└───functions                                     ← Model functions & Get functions for Weather Data
+└───functions                                      ← Model functions & Get functions for Weather Data
 │   │   functions.py
 │   │   get_weather_data.py
 │
 └───weather_files                                  ← Location of saved CSV files of Prediction Weather Data
-│   │   2023-01-13.csv
+    │   2023-01-13.csv
 ```
 
 # Lab 2
