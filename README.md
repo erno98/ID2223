@@ -65,13 +65,25 @@ air_quality
 │   │   │   warszawa.csv
 │   │   │   wroclaw.csv   
 │   │   └───.ipynb_checkpoints
-│   │       merge_air_quality-checkpoint.ipynb
+│   │       │  merge_air_quality-checkpoint.ipynb
 │   │   
 │   └───dummy_data
-│   │   
+│   │   │   pred.xlsx
+│   │   │   true.xlsx
 │   │   
 │   └───weather
-│   │   
+│       │   biala_podlaska.csv
+│       │   bielsko_biala.csv
+│       │   gdansk.csv
+│       │   katowice.csv
+│       │   krakow.csv
+│       │   merge_weather.ipynb
+│       │   poznan.csv
+│       │   warszawa.csv
+│       │   weather_merged.csv
+│       │   wroclaw.csv
+│       └───.ipynb_checkpoints
+│           │  merge_weather-checkpoint.ipynb
 │
 └───functions
 │
