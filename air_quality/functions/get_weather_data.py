@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 def get_weather_data(save_to_csv=True):
     df = pd.DataFrame()
 
-    df_meta = pd.read_excel('data_poland/meta.xlsx')
+    df_meta = pd.read_excel('air_quality/data_poland/meta.xlsx')
 
     cities = df_meta['city']
 
