@@ -3,6 +3,9 @@
 This repository contains solutions for the ID2223 Scalable Machine Learning and Deep Learning course at KTH.
 
 # Project
+
+![App GUI](air_quality/imgs/app_gui.png)
+
 ### Description
 This project is an advanced adaptation from the air quality prediction project found in [Hopsworks Air Quality Tutorial](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality "Hopsworks Air Quality Tutorial")
 
