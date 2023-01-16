@@ -58,7 +58,7 @@ def get_model(project, model_name, evaluation_metric, sort_metrics_by):
             model_dir = model.download()
             model = joblib.load(model_dir + f"/{model_name}.pkl")
 
-     return model
+    return model
 
 
 def get_air_json(city_name, AIR_QUALITY_API_KEY):
